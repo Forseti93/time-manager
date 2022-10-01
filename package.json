@@ -2,7 +2,7 @@
   "name": "time-manager-site-0-2",
   "version": "0.1.0",
   "private": true,
-  "namespace": ".",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
