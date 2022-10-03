@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import Page from "./components/Unsigned/UnsignedMain";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Alarm } from "./interfaces";
 import UnsignedLayout from "./layout/UnsignedLayout";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import IntenseWork from "./components/IntenceWork/IntenseWork";
-import BreaksControl from "./components/BreaksControl/BreaksControl";
-import WorkDay from "./components/WorkDay/WorkDay";
 
 const allAlarms: Alarm[] = [
   { event: "work start", intervalHours: 8, intervalMinutes: 0 },
@@ -24,7 +22,7 @@ const volume: string[] = ["volume-quiet", "volume-medium", "volume-loud"];
 const alarm = new Audio(require("./assets/sounds/work-or-break.mp3"));
 
 const App: React.FC = () => {
-  const [alarmsModeIndex, setAlarmsModeIndex] = useState<number>(1);
+  const [alarmsModeIndex, setAlarmsModeIndex] = useState<number>(0);
   const [volumeIndex, setVolumeIndex] = useState<number>(2);
 
   // FIXME: менять на тру в useEffect(() => setLoaded(true), [])
@@ -49,12 +47,14 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-        <UnsignedLayout
-          setAlarmsModeIndex={setAlarmsModeIndex}
-          volume={volume[volumeIndex]}
-          setVolumeIndex={setVolumeIndex}
-          alarmsMode={alarmsMode[alarmsModeIndex]}
-        />
+      <div className="wrapper">
+          <UnsignedLayout
+            setAlarmsModeIndex={setAlarmsModeIndex}
+            volume={volume[volumeIndex]}
+            setVolumeIndex={setVolumeIndex}
+            alarmsMode={alarmsMode[alarmsModeIndex]}
+          />
+      </div>
     </div>
   );
 };
