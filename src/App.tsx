@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Page from "./components/Page/Page";
+import Page from "./components/Unsigned/UnsignedMain";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Alarm } from "./interfaces";
+import UnsignedLayout from "./layout/UnsignedLayout";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 const allAlarms: Alarm[] = [
   { event: "work start", intervalHours: 8, intervalMinutes: 0 },
@@ -46,12 +48,12 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <div className="wrapper">
-        <Sidebar
-          setAlarmsModeIndex={setAlarmsModeIndex}
-          volume={volume[volumeIndex]}
-          setVolumeIndex={setVolumeIndex}
-        />
-        <Page alarmsMode={alarmsMode[alarmsModeIndex]} />
+          <UnsignedLayout
+            setAlarmsModeIndex={setAlarmsModeIndex}
+            volume={volume[volumeIndex]}
+            setVolumeIndex={setVolumeIndex}
+            alarmsMode={alarmsMode[alarmsModeIndex]}
+          />
       </div>
     </div>
   );
