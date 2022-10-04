@@ -33,6 +33,7 @@ function UnsignedUser(props: Props) {
             }
           >
             <Route path="/" element={<Navigate to="/Intense_work" replace={true} />} />
+            <Route path="time-manager-app/" element={<Navigate to="/Intense_work" replace={true} />} />
             <Route path="Intense_work" element={<IntenseWork />} />
             <Route path="Breaks_notifications" element={<BreaksControl />} />
             <Route path="Plan_all_day" element={<WorkDay />} />
