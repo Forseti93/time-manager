@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "./static/css/main.d10315e7.css",
-    "main.js": "./static/js/main.a9d3b89b.js",
+    "main.js": "./static/js/main.7f0cedbc.js",
     "static/media/work-or-break.mp3": "./static/media/work-or-break.b4c124cadca456a75f3b.mp3",
     "index.html": "./index.html",
     "main.d10315e7.css.map": "./static/css/main.d10315e7.css.map",
-    "main.a9d3b89b.js.map": "./static/js/main.a9d3b89b.js.map"
+    "main.7f0cedbc.js.map": "./static/js/main.7f0cedbc.js.map"
   },
   "entrypoints": [
     "static/css/main.d10315e7.css",
-    "static/js/main.a9d3b89b.js"
+    "static/js/main.7f0cedbc.js"
   ]
 }
