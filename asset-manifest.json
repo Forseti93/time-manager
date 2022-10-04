@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/time-manager-app/static/css/main.a24b0c9d.css",
+    "main.js": "/time-manager-app/static/js/main.2a526412.js",
+    "static/media/work-or-break.mp3": "/time-manager-app/static/media/work-or-break.b4c124cadca456a75f3b.mp3",
+    "index.html": "/time-manager-app/index.html",
+    "main.a24b0c9d.css.map": "/time-manager-app/static/css/main.a24b0c9d.css.map",
+    "main.2a526412.js.map": "/time-manager-app/static/js/main.2a526412.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a24b0c9d.css",
+    "static/js/main.2a526412.js"
+  ]
+}
