@@ -2,7 +2,7 @@ import React from 'react'
 
 function BreaksControl() {
   return (
-    <div>BreaksControl comsponent</div>
+    <div className='breaks-control container'>BreaksControl comsponent</div>
   )
 }
 

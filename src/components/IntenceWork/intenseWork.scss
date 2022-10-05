@@ -1,0 +1,150 @@
+.intense-work {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  > * + *:nth-child(2),
+  > * + *:nth-child(3),
+  > * + *:nth-child(6) {
+    margin-top: 50px;
+  }
+
+  > * + *:nth-child(4),
+  > * + *:nth-child(5) {
+    margin-top: 10px;
+  }
+
+  &__timer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+
+    > * + * {
+      margin-left: 10px;
+    }
+
+    & > button {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--main-background);
+
+      & > img {
+        width: 100%;
+      }
+    }
+
+    &__minutes {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 180px;
+      height: 90px;
+      background-color: var(--main-background);
+      border-radius: 5px;
+      padding: 10px 10px 20px 10px;
+      line-height: 45px;
+      font-size: 45px;
+      font-weight: 700;
+
+      &::after {
+        bottom: 6px;
+        content: "minutes";
+        position: absolute;
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: 400;
+      }
+    }
+
+    &__settings {
+      // checkbox
+      & > .break {
+        position: relative;
+        padding-right: 35px;
+        margin-bottom: 12px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+
+        & .break__checkmark {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 25px;
+          width: 25px;
+          background-color: var(--main-background);
+        }
+
+        &:hover input ~ .break__checkmark {
+          outline: 2px solid var(--darkest-text);
+          outline-offset: -2px;
+        }
+
+        & input:checked ~ .break__checkmark {
+          background-color: var(--main-background);
+        }
+
+        & .break__checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+
+        & input:checked ~ .break__checkmark:after {
+          display: block;
+        }
+
+        & .break__checkmark:after {
+          left: 9px;
+          top: 5px;
+          width: 5px;
+          height: 10px;
+          border: solid var(--darkest-text);
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &__start-btn {
+      padding: 10px 20px;
+      line-height: 25px;
+      font-size: 25px;
+      font-weight: 500;
+      text-transform: uppercase;
+      background-color: var(--main-background);
+      cursor: pointer;
+
+      &:hover {
+        outline: 2px solid var(--darkest-text);
+        outline-offset: -2px;
+      }
+    }
+  }
+}

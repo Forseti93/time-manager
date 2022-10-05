@@ -15,74 +15,73 @@ interface Props {
 const Sidebar = (props: Props) => {
   console.log(props.alarmsMode);
 
+  function changeAlarmMode() {
+    props.setAlarmsModeIndex((prev: number) => {
+      if (prev >= 2) {
+        return 0;
+      } else {
+        return prev + 1;
+      }
+    });
+  }
+
+  function changeVolume() {
+    props.setVolumeIndex((prev) => {
+      if (prev >= 2) {
+        return 0;
+      } else {
+        return prev + 1;
+      }
+    });
+  }
+
   return (
     <>
-      <div className="sidebar">
-        <nav className="sidebar__links">
-          <Link className="sidebar__btn" to="#">
-            <span className="sidebar__hover-indication"></span>
-            <img
-              className="sidebar__img"
-              src={unsignedUser}
-              alt="unsigned user"
-            />
-            <span className="sidebar__hover-text">User</span>
-          </Link>
-          <Link
-            className="sidebar__btn"
-            to={
-              // props.alarmsMode === "Intense work"
-              //   ? "/"
-              //   : 
-                `/${props.alarmsMode.replace(/\s/g, "_")}`
-            }
-            onClick={() =>
-              props.setAlarmsModeIndex((prev: number) => {
-                if (prev >= 2) {
-                  return 0;
-                } else {
-                  return prev + 1;
-                }
-              })
-            }
-          >
-            <span className="sidebar__hover-indication"></span>
-            <img className="sidebar__img" src={modes} alt="Modes for alarms" />
-            <span className="sidebar__hover-text">Next mode</span>
-          </Link>
-          <Link
-            className="sidebar__btn"
-            to="#"
-            // FIXME: make home page and intense work pages match
-            onClick={() =>
-              props.setVolumeIndex((prev) => {
-                if (prev >= 2) {
-                  return 0;
-                } else {
-                  return prev + 1;
-                }
-              })
-            }
-          >
-            <span className="sidebar__hover-indication"></span>
-            <img
-              className="sidebar__img"
-              src={require(`../../assets/imgs/${props.volume}.png`)}
-              alt="Volume"
-            />
-            <span className="sidebar__hover-text">Volume</span>
-          </Link>
-          <Link
-            className="sidebar__btn"
-            to="https://github.com/Forseti93/time-manager-app"
-            target="_blank"
-          >
-            <span className="sidebar__hover-indication"></span>
-            <img className="sidebar__img" src={gitHub} alt="Project's GitHub" />
-            <span className="sidebar__hover-text">GitHub</span>
-          </Link>
-        </nav>
-      </div>
+      <nav className="sidebar">
+        <Link className="sidebar__btn" to="#">
+          <span className="sidebar__hover-indication"></span>
+          <img
+            className="sidebar__img"
+            src={unsignedUser}
+            alt="unsigned user"
+          />
+          <span className="sidebar__hover-text">User</span>
+        </Link>
+        <Link
+          className="sidebar__btn"
+          to={`/${props.alarmsMode.replace(/\s/g, "_")}`}
+          onClick={changeAlarmMode}
+        >
+          <span className="sidebar__hover-indication"></span>
+          <img className="sidebar__img" src={modes} alt="Modes for alarms" />
+          <span className="sidebar__hover-text">Next mode</span>
+        </Link>
+        <Link
+          className="sidebar__btn"
+          to="#"
+          // FIXME: make home page and intense work pages match
+          // onClick={() => setTimeout(changeVolume, 2000)}
+          onClick={changeVolume}
+        >
+          <span className="sidebar__hover-indication"></span>
+          <img
+            className="sidebar__img"
+            src={require(`../../assets/imgs/${props.volume}.png`)}
+            alt="Volume"
+          />
+          <span className="sidebar__hover-text">Volume</span>
+        </Link>
+        <a
+          className="sidebar__btn"
+          href="https://github.com/Forseti93/time-manager-app"
+          target="_blank"
+        >
+          <span className="sidebar__hover-indication"></span>
+          <img className="sidebar__img" src={gitHub} alt="Project's GitHub" />
+          <span className="sidebar__hover-text">GitHub</span>
+        </a>
+      </nav>
+
       <Outlet />
     </>
   );

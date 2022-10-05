@@ -2,7 +2,7 @@
   "name": "time-manager-site-0-2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://forseti93.github.io/",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +12,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "gh-pages": "^4.0.0",
+    "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.1",

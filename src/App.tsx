@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar";
-import { Alarm } from "./interfaces";
+import { InputIntenseWork } from "./interfaces";
 import UnsignedLayout from "./layout/UnsignedLayout";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import IntenseWork from "./components/IntenceWork/IntenseWork";
 import BreaksControl from "./components/BreaksControl/BreaksControl";
 import WorkDay from "./components/WorkDay/WorkDay";
 
-const allAlarms: Alarm[] = [
-  { event: "work start", intervalHours: 8, intervalMinutes: 0 },
-];
-
-// NOTE: if change that const length - see component Sidebar -> .sidebar__btn -> onClick
+// names for URLs and H1 titles for every mode 
+// NOTE: if change alarmsMode length - see component Sidebar -> .sidebar__btn -> onClick
 const alarmsMode: string[] = [
   "Intense work",
   "Breaks notifications",

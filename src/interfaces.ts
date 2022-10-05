@@ -1,5 +1,5 @@
-export interface Alarm {
-    event: string;
-    intervalHours: number;
-    intervalMinutes: number;
-  }
+export interface InputIntenseWork {
+  allMinutes: number;
+  breaks: boolean;
+  startTime: number;
+}
