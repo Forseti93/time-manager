@@ -7,16 +7,18 @@ import NoMatch from "../components/NoMatch/NoMatch";
 import BreaksControl from "../components/BreaksControl/BreaksControl";
 import WorkDay from "../components/WorkDay/WorkDay";
 import "./unsignedLayout.css";
+import { CPUnsignedUser } from "../common/interfaces";
 
-interface Props {
-  setAlarmsModeIndex: React.Dispatch<React.SetStateAction<number>>;
-  volume: string;
-  setVolumeIndex: React.Dispatch<React.SetStateAction<number>>;
-  alarmsMode: string;
-}
+function UnsignedUser(props: CPUnsignedUser) {
+  // TODO: to create in WP default settings
+  // TODO: take preffs for intense work from WP
+  const [alarmsSettings, setAlarmsSettings] = useState({
+    minutes: 30,
+    breaks: true,
+  });
 
-function UnsignedUser(props: Props) {
   useEffect(() => {}, [props.alarmsMode]);
+
   return (
     <div className="unsigned">
       <div className="wrapper">
@@ -32,9 +34,23 @@ function UnsignedUser(props: Props) {
               />
             }
           >
-            <Route path="/" element={<Navigate to="/Intense_work" replace={true} />} />
-            <Route path="time-manager-app/" element={<Navigate to="/Intense_work" replace={true} />} />
-            <Route path="Intense_work" element={<IntenseWork />} />
+            <Route
+              path="/"
+              element={<Navigate to="/Intense_work" replace={true} />}
+            />
+            <Route
+              path="time-manager-app/"
+              element={<Navigate to="/Intense_work" replace={true} />}
+            />
+            <Route
+              path="Intense_work"
+              element={
+                <IntenseWork
+                alarmsSettings={alarmsSettings}
+                  setAlarmsSettings={setAlarmsSettings}
+                />
+              }
+            />
             <Route path="Breaks_notifications" element={<BreaksControl />} />
             <Route path="Plan_all_day" element={<WorkDay />} />
             <Route path="*" element={<NoMatch />} />

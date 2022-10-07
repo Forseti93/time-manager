@@ -50,24 +50,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       width: 180px;
-      height: 90px;
       background-color: var(--main-background);
       border-radius: 5px;
       padding: 10px 10px 20px 10px;
       line-height: 45px;
       font-size: 45px;
       font-weight: 700;
+      text-align: center;
+    }
 
-      &::after {
-        bottom: 6px;
-        content: "minutes";
-        position: absolute;
-        font-size: 15px;
-        line-height: 15px;
-        font-weight: 400;
-      }
+    & > span {
+      margin: 0 50%;
+      transform: translateX(-50%);
+      bottom: 7px;
+      position: absolute;
+      font-size: 15px;
+      line-height: 15px;
+      font-weight: 400;
     }
 
     &__settings {
