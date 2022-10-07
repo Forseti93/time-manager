@@ -104,7 +104,7 @@ function IntenseWork(props: CPIntenseWork) {
     } else {
       props.setAlarmsSettings((prev) => ({
         ...prev,
-        minutes: maximumMinutes,
+        minutes: minutesValue,
       }));
     }
   }
